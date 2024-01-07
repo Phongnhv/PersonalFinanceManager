@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root prefHeight="128.0" prefWidth="736.0" stylesheets="@addIndept.css" type="AnchorPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.InDebtController">
+   <styleClass>
+      <String fx:value="shadow" />
+      <String fx:value="white-bg" />
+   </styleClass>
+   <children>
+      <AnchorPane layoutX="576.0" layoutY="11.0" prefHeight="85.0" prefWidth="160.0" style="-fx-background-color: linear-gradient(to bottom right, #2d658c, #2ca772);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="576.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="MyDebtSubmit" layoutX="37.0" layoutY="44.0" mnemonicParsing="false" onAction="#SubmitSaving" prefHeight="43.0" prefWidth="85.0" styleClass="submit-btn" text="Submit" />
+            <Button fx:id="MyDebtButton" layoutX="60.0" layoutY="49.0" mnemonicParsing="false" styleClass="submit-btn" text="Paid" visible="false" />
+         </children>
+      </AnchorPane>
+      <TextField fx:id="myTextField" layoutX="68.0" layoutY="17.0" prefHeight="26.0" prefWidth="119.0" promptText="Enter Saving Amount" styleClass="text-fieldPro" AnchorPane.topAnchor="17.0" />
+      <ProgressBar fx:id="LoanProgress" layoutX="14.0" layoutY="94.0" prefHeight="24.0" prefWidth="546.0" progress="0.0" styleClass="loan-progress" />
+      <Label layoutX="25.0" layoutY="14.0" text="Saving" />
+      <Label layoutX="15.0" layoutY="28.0" text="Principal" />
+      <TextField fx:id="LoanInterest" layoutX="252.0" layoutY="55.0" prefHeight="26.0" prefWidth="119.0" promptText="\% (per Month)" styleClass="text-fieldPro" AnchorPane.leftAnchor="252.0" />
+      <Label layoutX="209.0" layoutY="52.0" text="Saving" />
+      <Label layoutX="204.0" layoutY="67.0" text="Interest" textAlignment="RIGHT" />
+      <TextField fx:id="PaidAmount" layoutX="440.0" layoutY="17.0" prefHeight="26.0" prefWidth="119.0" promptText="Enter Your Term" styleClass="text-fieldPro" visible="false" />
+      <Label fx:id="LoanRatio" layoutX="244.0" layoutY="97.0" textAlignment="CENTER" />
+      <TextField fx:id="LoanTitles" layoutX="68.0" layoutY="56.0" prefHeight="26.0" prefWidth="119.0" styleClass="text-fieldPro" />
+      <DatePicker fx:id="LoanDate" layoutX="252.0" layoutY="15.0" prefHeight="25.0" prefWidth="119.0" styleClass="text-fieldPro" AnchorPane.leftAnchor="252.0" AnchorPane.topAnchor="17.0" />
+      <Label layoutX="27.0" layoutY="51.0" text="Saving" />
+      <Label layoutX="35.0" layoutY="65.0" text="Title" />
+      <Label layoutX="397.0" layoutY="13.0" text="Saving" />
+      <Label layoutX="386.0" layoutY="28.0" text="End Date" textAlignment="RIGHT" />
+      <DatePicker fx:id="LoanDate1" layoutX="439.0" layoutY="17.0" prefHeight="25.0" prefWidth="119.0" styleClass="text-fieldPro" AnchorPane.topAnchor="17.0" />
+      <Label layoutX="211.0" layoutY="12.0" text="Saving" />
+      <Label layoutX="195.0" layoutY="27.0" text="Start Date" textAlignment="RIGHT" />
+      <TextField fx:id="SavingAmount" layoutX="438.0" layoutY="55.0" prefHeight="26.0" prefWidth="119.0" styleClass="text-fieldPro" />
+      <Label layoutX="392.0" layoutY="52.0" text="Current" />
+      <Label layoutX="390.0" layoutY="67.0" text="Amount" textAlignment="RIGHT" />
+   </children>
+</fx:root>

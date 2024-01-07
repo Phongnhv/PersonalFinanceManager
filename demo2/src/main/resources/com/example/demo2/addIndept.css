@@ -1,0 +1,38 @@
+.white-bg{
+  -fx-background-color: #fff;
+  -fx-background-radius: 8px;
+  -fx-border-radius: 8px;
+}
+
+.shadow{
+   -fx-effect:dropshadow(three-pass-box, rgba(0,0,0,0.5), 6,0,0,0);
+}
+
+.text-fieldPro{
+    -fx-background-color:linear-gradient(to bottom, #efefef, #eee);
+    -fx-background-radius:4px;
+    -fx-border-color:linear-gradient(to bottom right, #2d658c, #2ca772);
+    -fx-border-width:.8px;
+    -fx-font-family:"Tahoma";
+    -fx-border-radius:4px;
+}
+
+.submit-btn{
+    -fx-background-color:transparent;
+    -fx-border-color: linear-gradient(to bottom right, #2d658c, #2ca772);
+    -fx-border-radius:8px
+    -fx-background-radius:8px;
+    -fx-cursor:hand;
+    -fx-text-fill:#fff;
+    -fx-font-size:17px;
+    -fx-font-family:"Tahoma";
+}
+
+.submit-btn:hover{
+    -fx-background-color:#2268ae;
+}
+
+.text-fieldPro:focused{
+    -fx-background-color:#fff;
+    -fx-border-width:1px;
+}

@@ -1,0 +1,8 @@
+.highlighted-cell {
+    -fx-border-color: linear-gradient(to bottom right, #2d658c, #2ca772);
+    -fx-border-width:4px
+}
+
+.others-cell{
+  -fx-border-color:transparent;
+}
