@@ -1501,6 +1501,12 @@ public class dashboardController implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText("Please fill all blank fields");
                 alert.showAndWait();
+            } else if (!Income_amount.getText().matches("\\d+(\\.\\d+)?")){
+                alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error Message!");
+                alert.setHeaderText(null);
+                alert.setContentText("Please input a valid value for amount");
+                alert.showAndWait();
             }
             else {
                 String UN = CurrentSessionUserData.getUsername();
@@ -1553,7 +1559,14 @@ public class dashboardController implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText("Please select a data");
                 alert.showAndWait();
-            } else {
+            }else if (!Income_amount.getText().matches("\\d+(\\.\\d+)?")){
+                alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error Message!");
+                alert.setHeaderText(null);
+                alert.setContentText("Please input a valid value for amount");
+                alert.showAndWait();
+            }
+            else {
                 alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Confirmation Message");
                 alert.setHeaderText(null);
@@ -1960,7 +1973,13 @@ public class dashboardController implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText("Please use update function instead");
                 alert.showAndWait();
-            }else
+            }else if (!Expense_amount.getText().matches("\\d+(\\.\\d+)?")){
+                alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error Message!");
+                alert.setHeaderText(null);
+                alert.setContentText("Please input a valid value for amount");
+                alert.showAndWait();
+            } else
             {
                 String UN = CurrentSessionUserData.getUsername();
                 String des;
@@ -2020,7 +2039,14 @@ public class dashboardController implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText("Please select a data");
                 alert.showAndWait();
-            } else {
+            } else if (!Expense_amount.getText().matches("\\d+(\\.\\d+)?")) {
+                alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error Message!");
+                alert.setHeaderText(null);
+                alert.setContentText("Please input a valid value for amount");
+                alert.showAndWait();
+            }
+            else {
                 alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Confirmation Message");
                 alert.setHeaderText(null);

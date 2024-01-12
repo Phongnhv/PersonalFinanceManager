@@ -195,9 +195,6 @@ public class InDebtController {
             Alert alert;
             if (myTextField.getText().isEmpty()
                     || LoanInterest.getText().isEmpty()
-                    || !myTextField.getText().matches("\\d+(\\.\\d+)?")
-                    || Double.parseDouble(LoanInterest.getText()) >= 100.0
-                    || Double.parseDouble(LoanInterest.getText()) <= 0.0
                     || LoanDate.getValue() == null
                     || LoanTitles.getText().isEmpty()
                     || LoanDate1.getValue() == null){
@@ -206,7 +203,17 @@ public class InDebtController {
                 alert.setHeaderText(null);
                 alert.setContentText("Please fill all blank fields with proper input");
                 alert.showAndWait();
-            } else {
+            }else if (!myTextField.getText().matches("\\d+(\\.\\d+)?")
+                    || !LoanInterest.getText().matches("\\d+(\\.\\d+)?")
+                    || Double.parseDouble(LoanInterest.getText()) >= 100.0
+                    || Double.parseDouble(LoanInterest.getText()) <= 0.0) {
+                alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error Message!");
+                alert.setHeaderText(null);
+                alert.setContentText("Please input a valid value for amount/Interest");
+                alert.showAndWait();
+            }
+            else {
                 prepare = connect.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
                 prepare.setString(1, userData.getUsername());
@@ -312,6 +319,12 @@ public class InDebtController {
         if (PaidAmount.getText().isEmpty()) return;
         if (!PaidAmount.getText().matches("^\\d+$|^\\d+\\.\\d+$"))
         {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message!");
+            alert.setHeaderText(null);
+            alert.setContentText("Please input a valid value for amount/Interest");
+            alert.showAndWait();
+
             PaidAmount.setText("");
             return;
         }
@@ -425,13 +438,18 @@ public class InDebtController {
         try{
             Alert alert;
             if (myTextField.getText().isEmpty()
-                    || !LoanTitles.getText().matches("\\d+(\\.\\d+)?")
                     || LoanDate.getValue() == null
                     || LoanTitles.getText().isEmpty()){
                 alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error Message!");
                 alert.setHeaderText(null);
                 alert.setContentText("Please fill all blank fields with proper input");
+                alert.showAndWait();
+            }else if (!LoanTitles.getText().matches("\\d+(\\.\\d+)?")) {
+                alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error Message!");
+                alert.setHeaderText(null);
+                alert.setContentText("Please input a valid value for amount");
                 alert.showAndWait();
             } else {
                 prepare = connect.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -606,6 +624,12 @@ public class InDebtController {
         if (PaidAmount.getText().isEmpty()) return;
         if (!PaidAmount.getText().matches("^\\d+$|^\\d+\\.\\d+$"))
         {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message!");
+            alert.setHeaderText(null);
+            alert.setContentText("Please input a valid value for amount/Interest");
+            alert.showAndWait();
+
             PaidAmount.setText("");
             return;
         }
@@ -701,9 +725,6 @@ public class InDebtController {
             Alert alert;
             if (myTextField.getText().isEmpty()
              || LoanInterest.getText().isEmpty()
-             || !myTextField.getText().matches("\\d+(\\.\\d+)?")
-             || !LoanInterest.getText().matches("\\d+(\\.\\d+)?")
-             || Double.parseDouble(LoanInterest.getText()) >= 100.0
              || LoanDate.getValue() == null
              || LoanTitles.getText().isEmpty()){
                 alert = new Alert(Alert.AlertType.ERROR);
@@ -711,7 +732,17 @@ public class InDebtController {
                 alert.setHeaderText(null);
                 alert.setContentText("Please fill all blank fields with proper input");
                 alert.showAndWait();
-            } else {
+            }else if (!myTextField.getText().matches("\\d+(\\.\\d+)?")
+                    || !LoanInterest.getText().matches("\\d+(\\.\\d+)?")
+                    || Double.parseDouble(LoanInterest.getText()) >= 100.0
+                    || Double.parseDouble(LoanInterest.getText()) < 0.0) {
+                alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error Message!");
+                alert.setHeaderText(null);
+                alert.setContentText("Please input a valid value for amount/Interest");
+                alert.showAndWait();
+            }
+            else {
                 prepare = connect.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
                 prepare.setString(1, userData.getUsername());
